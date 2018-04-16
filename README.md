@@ -262,7 +262,7 @@ The function first puts the model in training mode (turns off dropout
 and fixes the batch normalization constants). It then copies the data to
 the GPU if CUDA is available. Next it wraps the data in a `Variable`
 class, which is necessary for running PyTorch’s automatic
-differentiation machine (to compute the gradient). The then zeros the
+differentiation machine (to compute the gradient). It then zeros the
 gradient buffer in the optimizer, calculates the loss value, and then
 computes the gradient by calling `backward()` on the loss. It then takes
 one gradient descent step. Finally, it reports the training loss every
@@ -322,7 +322,7 @@ If you have installed Anaconda and PyTorch on your own personal
 computer, you can run (and debug) the code via
 
 ``` bash
-python ./main.py
+$ python ./main.py
 ```
 
 ## Getting the code onto your GPU box
@@ -405,8 +405,7 @@ If you want to watch the log file during the run, you can use `tail`:
 
 At this point, our script is not being tracked by Git. Suppose we want
 to share our code with a collaborator, and have them run the same
-script. Then, add the script and push it back to the remote GitHub
-repository.
+script. Add the script and push it back to the remote GitHub repository.
 
 ``` bash
 (GPU-box) $ git add run.sh
