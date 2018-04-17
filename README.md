@@ -421,6 +421,62 @@ $ git pull origin
 
 And the file will magically appear.
 
+# Tips and Tricks
+
+There are a couple command line utilities you may use to make developing
+in a command line environment less painful.
+
+## Tmux
+
+SSH by itself is fairly rudimentary. You only have access to one shell –
+what if you want to open multiple shells on your remote machine? For
+example, say you want to edit code in one shell, run code in another,
+and monitor an active log file in a third shell. Do you SSH in to your
+remote machine three times?
+
+Thankfully no. Use `tmux`, a terminal multiplier. It allows you to open
+as many shells as you want, all from one SSH log in.
+
+But this isn’t even the main appeal of `tmux`. It’s main selling point
+is that it allows for a persistent working state on remote machines. Say
+your SSH connection is dropped (spotty WiFi perhaps). If you are using
+only SSH, all your work will be lost – when you SSH back in, you’ll be
+looking at a blank prompt. If instead, you were working in a `tmux`
+session, all you have to do upon logging back in is issue the command
+
+``` bash
+$ tmux attach
+```
+
+and your session reappears.
+
+There are about a million `tmux` tutorials out there, but
+[here’s](https://danielmiessler.com/study/tmux/) one I like.
+
+## `rsync`, `scp`
+
+Git is extremely useful for syncronizing code, but you should *never*
+use it for transferring data. Instead, use the commands `scp` and
+`rsync`. Use `scp` for transferring individual files, and `rsync` for
+syncronizing entire folders.
+
+# Exersises
+
+1.  Modify `main.py` to log the value of the loss functon in a ‘csv’
+    file after each step of the optimizer. Use one ‘csv’ for training
+    values, and another for test values.
+2.  Write a Python script to import the csv file and plot it. For
+    import, use the Python library `pandas`; for plotting use
+    `matplotlib`.
+3.  Create a class `schedule` in `main.py` implementing a learning rate
+    scheduler. The class should have a function `step()`, which
+    decreases the learning rate according to the schedule. Call
+    `schedule.step()` after each epoch of test data.
+4.  Using the Python library `pickle`, store the parameter values of the
+    LeNet model after each epoch in a file. Compute the true gradient of
+    the model at each parameter value, and compare the true gradient
+    against the mini batch gradients.
+
 # Citations
 
 <div id="refs" class="references">
