@@ -38,7 +38,7 @@ main appeal is it comes with a complete set of commonly used scientific
 computing libraries.
 
 Installation instructions for your particular operating system are found
-[here](https://conda.io/docs/user-guide/install/index.html).
+[here](https://docs.anaconda.com/anaconda/install/).
 
 ### Installation on a server
 
