@@ -6,6 +6,8 @@ basic command line utilities.
 This guide is intended for people with no experience developing in a
 command line environment.
 
+_Edit April 2, 2020:_ Quite a few of the packages below have newer releases, so you'll have to bump their version numbers accordingly. For example, Anaconda is now at version 2020.02.
+
 # Installation and set up
 
 ## SSH
